@@ -39,18 +39,18 @@
         <p>Por favor ponte en contacto con nosotros o síguenos en nuestras redes sociales </p>
         <form class=" font-weight-bold">
           Nombre:
-          <input class="my-3" type="text" name="nombre" required />
+          <input class="my-3" type="text" id="nombre" name="nombre" required />
           <br>
           Asunto:
-          <input class="my-3" type="text" name="asunto">
+          <input class="my-3" type="text" id="asunto" name="asunto">
           <br>
           Correo:
-          <input class="my-3" type="text" placeholder="name@example.com" name="correo">
+          <input class="my-3" type="text" id="correo" placeholder="name@example.com" name="correo">
           <br>
-          <textarea class="my-3"  name="mensaje" rows="10" cols="30">
+          <textarea class="my-3" id="descripcion"  name="mensaje" rows="10" cols="30">
           </textarea>
           <br>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" id="guardar" class="btn btn-primary">Enviar</button>
         </form>
 
       </div>
@@ -101,6 +101,14 @@
 
   <script src="js/app.js"></script>
   <meta name="theme-color" content="#3498db">
+  <script src="js/main.js" type="module"></script>
+    <!-- API DEXIE - Api para manejo de base de datos indexBD -->
+    <script
+      src="js/dexie.min.js"
+      integrity="sha512-ZxOA8l07uAOW9hOwLustU8G5Pa9WGUplctjW6OSPYT9VZiS6PzEX7tJdZvUQLswakTUkACm5/rykzrDhds2TJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
   <script src="js/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

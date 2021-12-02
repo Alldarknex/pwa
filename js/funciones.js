@@ -92,6 +92,7 @@ const ordenarCampos = producto=>{
         id:producto.id,
         nombre:producto.nombre,
         precio:producto.precio,
+        correo:producto.correo,
         imagen:producto.imagen
     }
     //Retornamos el objeto con el producto ordenado

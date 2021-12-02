@@ -5,7 +5,7 @@ import tiendabd, {guardar,consultar,crearEtiqueta} from './funciones.js';
 empleamos la función de tindabd para crear la base de datos tienda
 y la tabla de productos, para crear la tabla debemos indicar los atributos
 ++id indica que el id es auto incremental*/
-let bd=tiendabd("Tienda", {productos:`++id,nombre, precio,imagen`});
+let bd=tiendabd("Tienda", {productos:`++id,nombre,correo, precio,imagen`});
 
 
 /*Genermaos un objeto para cada elemento del formulario que
@@ -17,8 +17,9 @@ los id de la etiqueta html*/
 //Objetos para acceder a lso input del formulario
 const clave_prod = document.getElementById("clave");
 const nombre_prod = document.getElementById("nombre");
-const costo_prod = document.getElementById("costo");
-const img_prod = document.getElementById("imagen");
+const costo_prod = document.getElementById("asunto");
+const correo_prod = document.getElementById("correo");
+const img_prod = document.getElementById("descripcion");
 
 /*Objeto para acceder a etiqueta que nos mostrará un mesaje en la 
 tabla cuando no tengamos productos para mostrar*/
@@ -49,12 +50,14 @@ btGuardar.onclick=(evento)=>{
      let flag =guardar(bd.productos, {
      nombre:nombre_prod.value,
      precio:costo_prod.value,
+     correo:correo_prod.value,
      imagen:img_prod.value
  });
  
  if(flag){//Si se guardo limpiamo el formulario
    nombre_prod.value="";
-   costo_prod.value=""
+   costo_prod.value="";
+   correo_prod.value="";
    img_prod.value="";
 
   //recargamos la tabla para visualizar el nuevo registro
@@ -75,13 +78,15 @@ btModificar.onclick=(evento)=>{
         bd.productos.update(id,{
             nombre:nombre_prod.value,
             precio:costo_prod.value,
+            correo:correo_prod.value,
             imagen:img_prod.value
         }).then((resultado)=>{//si se realiza la modificación
             if(resultado){
                 //Limpiamos el formulario y recargamos la tabla
                console.log("Modificación realizada");
                 nombre_prod.value="";
-                costo_prod.value=""
+                costo_prod.value="";
+                correo_prod.value="";
                 img_prod.value="";
                 cargarTabla();
                 
@@ -101,7 +106,7 @@ btEliminarTodo.onclick=()=>{
     //Elimianmos la BD
        bd.delete();
        //La creamos nuevamente, al igual que la tabla
-       bd=tiendabd("Tienda", {productos:`++id,nombre, precio, imagen`});
+       bd=tiendabd("Tienda", {productos:`++id,nombre, correo, precio, imagen`});
        //abrimos la nueva bd
        bd.open();
        //Recargamos la vista
@@ -176,6 +181,7 @@ function btnEditar(evento) {
       clave_prod.value=producto.id||0;
       nombre_prod.value=producto.nombre||"";
       costo_prod.value=producto.precio||"";
+      correo_prod.value=producto.correo||"";
       img_prod.value=producto.imagen||"";
 
     })
