@@ -1,5 +1,5 @@
 //importamos el achivo de funciones y accedemos al objeto de la bd y funciones
-import tiendabd, {guardar,consultar,crearEtiqueta} from 'js/funciones.js';
+import tiendabd, {guardar,consultar,crearEtiqueta} from '/js/funciones.js';
 
 /*Al cargar por primera vez el sitio debemos crear la bd,
 empleamos la función de tindabd para crear la base de datos tienda
