@@ -5,7 +5,7 @@ import tiendabd, {guardar,consultar,crearEtiqueta} from '/funciones.js';
 empleamos la función de tindabd para crear la base de datos tienda
 y la tabla de productos, para crear la tabla debemos indicar los atributos
 ++id indica que el id es auto incremental*/
-let bd=tiendabd("Tienda", {productos:`++id,nombre,correo, precio,imagen`});
+let bd=tiendabd("Tienda", {productos:`id++,nombre,correo, precio,imagen`});
 
 
 /*Genermaos un objeto para cada elemento del formulario que
@@ -15,7 +15,7 @@ Nota: recuerda que el nombre que esta entre paretesis es el nombre de
 los id de la etiqueta html*/
 
 //Objetos para acceder a lso input del formulario
-const clave_prod = document.getElementById("clave");
+
 const nombre_prod = document.getElementById("nombre");
 const costo_prod = document.getElementById("asunto");
 const correo_prod = document.getElementById("correo");
