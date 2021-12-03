@@ -1,5 +1,5 @@
 //importamos el achivo de funciones y accedemos al objeto de la bd y funciones
-import tiendabd, {guardar,consultar,crearEtiqueta} from './funciones.js';
+import tiendabd, {guardar,consultar,crearEtiqueta} from '/funciones.js';
 
 /*Al cargar por primera vez el sitio debemos crear la bd,
 empleamos la función de tindabd para crear la base de datos tienda
@@ -63,7 +63,7 @@ btGuardar.onclick=(evento)=>{
   //recargamos la tabla para visualizar el nuevo registro
    cargarTabla();
    
-}
+    }
 }
 
 /*Evento click para ejecutar la modificación de datos, 
